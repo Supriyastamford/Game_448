@@ -15,12 +15,12 @@ function Move ()
 		    	
 		    	if ( move > 300 )
 		    		{
-		    			animation.CrossFade("run");
+		    			GetComponent.<Animation>().CrossFade("run");
 		    			add = 20*AddRunSpeed;
 		    		}
 		    	else
 		    		{
-		    			animation.Play("walk");
+		    			GetComponent.<Animation>().Play("walk");
 		    			add = 5*AddWalkSpeed;
 		    		}
 		    			    	
@@ -32,11 +32,11 @@ function Move ()
 		        
     if ( Input.GetKeyUp(KeyCode.UpArrow))
     	{
-			if ( animation.IsPlaying("walk"))
-				{	animation.CrossFade("stand",0.3); }
-			if ( animation.IsPlaying("run"))
+			if ( GetComponent.<Animation>().IsPlaying("walk"))
+				{	GetComponent.<Animation>().CrossFade("stand",0.3); }
+			if ( GetComponent.<Animation>().IsPlaying("run"))
 				{	
-					animation.CrossFade("stand",0.5);
+					GetComponent.<Animation>().CrossFade("stand",0.5);
 					stop = true;
 				}	
 			move = 20;
@@ -67,44 +67,44 @@ function Update ()
 		 
 		if (Input.GetKey(KeyCode.Q))
 			{	
-				animation.CrossFade("attack01",0.2);
-				animation.CrossFadeQueued("stand",0.3);
+				GetComponent.<Animation>().CrossFade("attack01",0.2);
+				GetComponent.<Animation>().CrossFadeQueued("stand",0.3);
 			}
 			
 		if (Input.GetKey(KeyCode.W))
 			{	
-				animation.CrossFade("attack02",0.2);
-				animation.CrossFadeQueued("stand",0.3);
+				GetComponent.<Animation>().CrossFade("attack02",0.2);
+				GetComponent.<Animation>().CrossFadeQueued("stand",0.3);
 			}
 			
 		if (Input.GetKey(KeyCode.A))
 			{	
-				animation.CrossFade("drop down",0.2);
+				GetComponent.<Animation>().CrossFade("drop down",0.2);
 				//animation.CrossFadeQueued("idle1",0.5);
 			}
 	
 		if (Input.GetKey(KeyCode.Z))
 			{	
-				animation.CrossFade("sit up",0.2);
-				animation.CrossFadeQueued("stand",0.5);
+				GetComponent.<Animation>().CrossFade("sit up",0.2);
+				GetComponent.<Animation>().CrossFadeQueued("stand",0.5);
 			}
 		
 		if (Input.GetKey(KeyCode.S))
 			{	
-				animation.CrossFade("damage",0.1);
-				animation.CrossFadeQueued("stand",0.1);			
+				GetComponent.<Animation>().CrossFade("damage",0.1);
+				GetComponent.<Animation>().CrossFadeQueued("stand",0.1);			
 			}
 			
 		if (Input.GetKey(KeyCode.X))
 			{	
-				animation.CrossFade("dead",0.1);
+				GetComponent.<Animation>().CrossFade("dead",0.1);
 				//animation.CrossFadeQueued("stand",0.1);			
 			}			
 			
 		if (Input.GetKey(KeyCode.D))
 			{	
-				animation.CrossFade("stand_vigilance",0.1);
-				animation.CrossFadeQueued("stand",0.3);			
+				GetComponent.<Animation>().CrossFade("stand_vigilance",0.1);
+				GetComponent.<Animation>().CrossFadeQueued("stand",0.3);			
 			}			
 			
 		if ( Input.GetKey(KeyCode.LeftArrow))
